@@ -5,12 +5,15 @@ package edu.ucaldas.structural;
 // 2. Debe tener un campo protegido Notifier wrappee y delegar la llamada a send().
 
 public abstract class NotifierDecorator implements Notifier {
-    // TODO: agrega el atributo y constructor.
+    protected Notifier wrappee;
+
+    public NotifierDecorator(Notifier wrappee) {
+        this.wrappee = wrappee;
+    }
 
     @Override
     public String send(String message) {
-        // TODO: delegar la llamada al objeto envuelto.
-        return null;
+        return wrappee.send(message);
     }
 }
 

@@ -14,7 +14,7 @@ public class NotifierDecoratorTest {
     @Test
     public void testSMSDecorator() {
         Notifier email = new EmailNotifier();
-        //Notifier sms = new SMSNotifier(email);
-        //assertEquals("SMS enviado: Hola | Email enviado: Hola", sms.send("Hola"));
+        Notifier sms = new SMSNotifier(email);
+        assertEquals("SMS enviado: Hola | Email enviado: Hola", sms.send("Hola"));
     }
 }
